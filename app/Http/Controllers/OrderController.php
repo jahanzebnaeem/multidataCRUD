@@ -100,4 +100,10 @@ class OrderController extends Controller
     {
         //
     }
+
+    public function items($id)
+    {
+        $items = Item::where('order_id', '=', $id)->get();
+        return view('front_page.items', compact('items'));
+    }
 }

@@ -24,3 +24,4 @@ Route::get('/', [FrontpageController::class, 'home']);
 Route::post('/orders', [OrderController::class, 'store']);
 
 Route::get('/orders', [OrderController::class, 'index']);
+Route::get('/items/{id}', [OrderController::class, 'items']);

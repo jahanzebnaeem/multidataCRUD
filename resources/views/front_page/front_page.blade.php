@@ -74,7 +74,16 @@
         var budget=tr.find('.budget').val();
         var amount=(quantity*budget);
         tr.find('.amount').val(amount);
+				total();
     	});
+			function total(){
+        var total=0;
+        $('.amount').each(function(i,e){
+          var amount=$(this).val()-0;
+					total +=amount;
+				});
+				$('.total').html(total+".00 PKR");    
+			};
 			$('.addRow').on('click',function(){
 					addRow();
 			});

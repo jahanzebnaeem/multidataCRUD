@@ -52,6 +52,16 @@
 									<td><a href="#" class="btn btn-danger remove"><i class="glyphicon glyphicon-remove"></i></a></td>
 								</tr>
 							</tbody>
+							<tfoot>
+								<tr>
+										<td style="border: none"></td>
+										<td style="border: none"></td>
+										<td style="border: none"></td>
+										<td>Total</td>
+										<td><b class="total"></b> </td>
+										<td><input type="submit" name="" value="Submit" class="btn btn-success"></td>
+								</tr>
+							</tfoot>
 						</table>
 					</div>
 				</section>

@@ -44,11 +44,11 @@
 							</thead>
 							<tbody>
 								<tr>
-									<td><input type="text" name="product_name[]" class="form-control" required="true" /></td>
+									<td><input type="text" name="product_name[]" class="form-control" required /></td>
 									<td><input type="text" name="brand[]" class="form-control" /></td>
-									<td><input type="text" name="quantity[]" class="form-control quantity" /></td>
+									<td><input type="text" name="quantity[]" class="form-control quantity" required /></td>
 									<td><input type="text" name="budget[]" class="form-control budget" /></td>
-									<td><input type="text" name="amount[]" class="form-control" /></td>
+									<td><input type="text" name="amount[]" class="form-control amount" /></td>
 									<td><a href="#" class="btn btn-danger remove"><i class="glyphicon glyphicon-remove"></i></a></td>
 								</tr>
 							</tbody>
@@ -68,6 +68,13 @@
 			</form>
 		</div>
 		<script type="text/javascript">
+			$('tbody').delegate('.quantity,.budget','keyup',function(){
+        var tr=$(this).parent().parent();
+        var quantity=tr.find('.quantity').val();
+        var budget=tr.find('.budget').val();
+        var amount=(quantity*budget);
+        tr.find('.amount').val(amount);
+    	});
 			$('.addRow').on('click',function(){
 					addRow();
 			});

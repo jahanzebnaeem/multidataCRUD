@@ -13,6 +13,11 @@
 	<body>
 		<div class="container">
 			<br>
+			@if(Session::has('success'))
+				<div class="alert alert-success">
+						{{Session::get('success')}}
+				</div>
+			@endif
 			<form action="/orders" method="post">
 				@csrf
 				<section>

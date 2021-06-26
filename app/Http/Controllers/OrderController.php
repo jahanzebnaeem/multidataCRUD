@@ -52,7 +52,7 @@ class OrderController extends Controller
                 Item::insert($data2);
             }
         }
-        return redirect()->back()->with('success', 'data insert successfully');
+        return redirect()->back()->with('success', 'Data insert successfully');
     }
 
     /**

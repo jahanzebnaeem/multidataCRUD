@@ -19,6 +19,7 @@ class CreateItemsTable extends Migration
             $table->string('product_name')->nullable();
             $table->string('brand')->nullable();
             $table->string('quantity')->nullable();
+            $table->string('budget')->nullable();
             $table->string('amount')->nullable();
             $table->timestamps();
             $table->foreign('order_id')->references('id')->on('orders');

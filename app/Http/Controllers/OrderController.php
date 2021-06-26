@@ -75,7 +75,9 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $order = Order::find($id);
+        $items = Item::where('order_id', '=', $id)->get();
+        return view('front_page.order', compact('order', 'items'));
     }
 
     /**
@@ -87,7 +89,7 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return "thanks";
     }
 
     /**

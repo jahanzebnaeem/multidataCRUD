@@ -25,3 +25,6 @@ Route::post('/orders', [OrderController::class, 'store']);
 
 Route::get('/orders', [OrderController::class, 'index']);
 Route::get('/items/{id}', [OrderController::class, 'items']);
+
+Route::get('/orders/{id}', [OrderController::class, 'edit']);
+Route::patch('/orders/{id}', [OrderController::class, 'update']);

@@ -12,7 +12,9 @@
 	</head>
 	<body>
 		<div class="container">
-			<form action="">
+			<br>
+			<form action="/orders" method="post">
+				@csrf
 				<section>
 					<div class="row">
 						<div class="col-md-6">

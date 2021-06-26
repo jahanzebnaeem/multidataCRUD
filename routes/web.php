@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FrontpageController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [FrontpageController::class, 'home']);
+
+Route::post('/orders', [OrderController::class, 'store']);

@@ -83,6 +83,15 @@
 					'</tr>';
 					$('tbody').append(tr);
 			};
+			$('.remove').live('click',function(){
+        var last=$('tbody tr').length;
+        if(last==1){
+            alert("You can not remove last row");
+        }
+        else{
+             $(this).parent().parent().remove();
+        }
+    	});
 		</script>
 	</body>
 </html>

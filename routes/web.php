@@ -22,3 +22,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [FrontpageController::class, 'home']);
 
 Route::post('/orders', [OrderController::class, 'store']);
+
+Route::get('/orders', [OrderController::class, 'index']);

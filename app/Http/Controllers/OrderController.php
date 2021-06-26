@@ -89,7 +89,26 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return "thanks";
+        $order = Order::find($id);
+
+        $order->customer_name = $request->customer_name;
+        $order->customer_address = $request->customer_address;
+        $order->save();
+
+        if (count($request->id) > 0) {
+            foreach ($request->id as $item => $v) {
+                $data2 = array(
+                    'product_name' => $request->product_name[$item],
+                    'brand' => $request->brand[$item],
+                    'quantity' => $request->quantity[$item],
+                    'budget' => $request->budget[$item],
+                    'amount' => $request->amount[$item],
+                );
+                $item = Item::where('id', $request->id[$item])->first();
+                $item->update($data2);
+            }
+        }
+        return redirect()->back()->with('success', 'Data updated successfully');
     }
 
     /**

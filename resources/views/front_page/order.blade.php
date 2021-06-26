@@ -40,12 +40,13 @@
 						</thead>
 						<tbody>
 							@foreach ($items as $key=>$item)
+								<input type="hidden" name="id[]" value={{$item->id}}>
 								<tr>
-									<td><input type="text" name="product_name[{{++$key}}]" class="form-control" value="{{$item->product_name}}" required /></td>
-									<td><input type="text" name="brand[{{++$key}}]" class="form-control" value="{{$item->brand}}" /></td>
-									<td><input type="text" name="quantity[{{++$key}}]" class="form-control quantity" value="{{$item->quantity}}" required /></td>
-									<td><input type="text" name="budget[{{++$key}}]" class="form-control budget" value="{{$item->budget}}" /></td>
-									<td><input type="text" name="amount[{{++$key}}]" class="form-control amount" value="{{$item->amount}}" /></td>
+									<td><input type="text" name="product_name[]" class="form-control" value="{{$item->product_name}}" required /></td>
+									<td><input type="text" name="brand[]" class="form-control" value="{{$item->brand}}" /></td>
+									<td><input type="text" name="quantity[]" class="form-control quantity" value="{{$item->quantity}}" required /></td>
+									<td><input type="text" name="budget[]" class="form-control budget" value="{{$item->budget}}" /></td>
+									<td><input type="text" name="amount[]" class="form-control amount" value="{{$item->amount}}" /></td>
 								</tr>
 							@endforeach
 						</tbody>
